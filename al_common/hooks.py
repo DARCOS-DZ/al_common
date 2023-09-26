@@ -4,7 +4,23 @@ app_publisher = "SARL DARCOS"
 app_description = "The most common AL specifications"
 app_email = "contact@darcos.dz"
 app_license = "agpl-3.0"
-# required_apps = []
+
+app_include_js = "/assets/al_common/js/custom_number_format.js"
+
+# import frappe function & custom function for customisation
+import frappe as _frappe
+import al_common.utils.data as _al_common
+
+# Replace frappe function with custom function
+_frappe.utils.data.fmt_money = _al_common.custom_fmt_money
+_frappe.utils.fmt_money = _al_common.custom_fmt_money
+
+_frappe.utils.data.money_in_words = _al_common.money_in_words
+_frappe.utils.money_in_words = _al_common.money_in_words
+
+fixtures = ["System Settings", "Website Settings"]
+
+required_apps = ["erpnext"]
 
 # Includes in <head>
 # ------------------
