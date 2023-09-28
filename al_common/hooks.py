@@ -5,7 +5,7 @@ app_description = "The most common AL specifications"
 app_email = "contact@darcos.dz"
 app_license = "agpl-3.0"
 
-app_include_js = "/assets/al_common/js/custom_number_format.js"
+app_include_js = ["/assets/al_common/js/custom_number_format.js"]
 
 # import frappe function & custom function for customisation
 import frappe as _frappe
